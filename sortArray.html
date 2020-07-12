@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My Favorite Foods, Alphabetized</h2>
+
+<p id="displayFoods"></p>
+
+<button onclick="myFunction()">Alphabetize</button>
+
+<p id="displayFoodsAlphabetized"></p>
+
+<script>
+var favFoods = ["Chinese Food", "Chimichangas", "Dominoes Three Cheese Pizza", "Lobster", "Crab Legs", "Chipotle Barbacoa Fajita Burrito"];
+document.getElementById("displayFoods").innerHTML = favFoods;
+
+function myFunction() {
+  favFoods.sort();
+  document.getElementById("displayFoodsAlphabetized").innerHTML = favFoods;
+}
+</script>
+
+</body>
+</html>

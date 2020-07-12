@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Fun With Colors!</title>
+<script>
+  i = 0;
+  while (i < 10){
+    setTimeout("document.bgColor='white'", 1000)
+    setTimeout("document.bgColor='lightpink'", 1500)
+    setTimeout("document.bgColor = 'pink'", 2000)
+    setTimeout("document.bgColor =  'deeppink'", 2500)
+    setTimeout("document.bgColor = 'red'", 3000)
+    setTimeout("document.bgColor = 'tomato'", 3500)
+    setTimeout("document.bgColor = 'darkred'", 4000)
+    clearTimeout();
+  i++;
+}
+</script>
+</head>
+<body>
+<h1>Good Day!</h1>
+</body>
+</html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fun With Colors!</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <center><h1>Good Day!</h1><center>
+    <div id="welcome"></div>
+    <script>
+      setInterval(
+        function () {
+          var randomColor = Math.floor(Math.random()*16777215).toString(16);
+          document.body.style.backgroundColor = "#"+randomColor;
+          },2000);
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d;
+
+      var yourName = prompt("Please enter your name", "<name goes here>");
+
+      if (yourName != null) {
+
+        document.getElementById("welcome").innerHTML =
+
+        "Hello " + yourName + "! How are you today?";
+      }
+    </script>
+  </body>
+</html>

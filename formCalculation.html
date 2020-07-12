@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h3>Calculate a tip for service...</h3>
+    <form id="myForm">
+      <label>Enter the cost of the service: </label><input type="text" id="Cost: " value=""><br><br>
+      <p>Enter the percentage you would like to tip in decimal form (for example, .20 for 20%)</p>
+      <label>Enter the percentage you would like to tip: </label><input type="text" id="Percentage: " value=""><br><br>
+    </form>
+
+    <button onclick="multiplyBy()">Calculate</button><br><br>
+
+    <div id="showTip"></div>
+
+    <script type="text/javascript">
+      function multiplyBy()
+      {
+        num1 = document.getElementById("Cost: ").value;
+        num2 = document.getElementById("Percentage: ").value;
+        tip = (num1 * num2);
+
+        document.getElementById("showTip").innerHTML = "The dollar amount you would leave is: $" + tip.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

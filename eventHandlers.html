@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    td { border: 1px solid black; }
+  </style>
+</head>
+<body>
+  <h3  onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">Form Input Displayed Colorfully</h3>
+  <form id="myForm" >
+    <label onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">First name: </label><input type="text" name="First Name: " value=""><br>
+    <label onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">Last name: </label><input type="text" name="Last Name: " value=""><br>
+    <label onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">Address: </label><input type="text" name="Address: " value=""><br>
+    <label onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">City: </label><input type="text" name="City: " value=""><br>
+    <label onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">State: </label><input type="text" name="State: " value=""><br>
+  </form>
+  <button onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'" onclick="myFunction()">Submit</button>
+  <p onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">Submit your form data to see it confirmed below.</p>
+  <div id="div1" onmouseover="style.fontWeight = 'bold'; style.color = 'DeepPink'" onmouseout="style.fontWeight = 'normal'; style.color = 'black'">
+  </div>
+  <script>
+    function myFunction() {
+      var txt = "";
+      var i;
+      var lbl;
+      var x = document.getElementById("myForm");
+      var div1 = document.getElementById('div1');
+      var tbl = document.createElement("table");
+      var header1 = document.createElement("th");
+      var header2 = document.createElement("th");
+      var h1 = "Info";
+      var h2 = "Input";
+      header1.innerHTML = h1;
+      header2.innerHTML = h2;
+      tbl.appendChild(header1);
+      tbl.appendChild(header2);
+      for (i = 0; i < x.length; i++) {
+       txt = x.elements[i].value + "<br>";
+       lbl = x.elements[i].name + "<br>";
+       var row = tbl.insertRow([i]);
+       var cell1 = row.insertCell(0);
+       var cell2 = row.insertCell(1);
+       cell1.innerHTML = lbl;
+       cell2.innerHTML = txt;
+      }
+      tbl.appendChild(row);
+      div1.appendChild(tbl);
+      }
+  </script>
+</body>
+</html>

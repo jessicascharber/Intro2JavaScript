@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>JavaScript conditional statement to sort three numbers</title>
+  </head>
+  <body>
+    <h1>Sorting Numbers with a Conditional Statement</h1>
+    <p id= "displayArray"></p>
+    <p id= "ascendingOrder"></p>
+    <p id= "descendingOrder"></p>
+    <script>
+      const arr = [4297, 45645, 45341, 4753, 53535, 354656];
+      function ascendingSort(a, b) {
+        if (a < b) { return -1 }
+        return 1
+      };
+
+      function descendingSort(a, b) {
+        if (a < b) { return 1 }
+        return -1
+      };
+      //console.log(`Native --> `, arr.sort());
+      console.log(`Sorted Ascending: `, arr.sort(ascendingSort));
+      console.log(`Sorted Descending: `, arr.sort(descendingSort));
+      document.getElementById("displayArray").innerHTML = "Original Array: " + arr;
+      document.getElementById("ascendingOrder").innerHTML = "Sorted Ascending: " + arr.sort(ascendingSort);
+      document.getElementById("descendingOrder").innerHTML = "Sorted Descending: " + arr.sort(descendingSort);
+    </script>
+  </body>
+</html>

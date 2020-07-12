@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="themes/displayMessage.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" data-theme="a">
+      <div data-role="header">
+        <h2>Enter a Word of Your Choice to See a Funny Message Displayed!</h2>
+      </div>
+      <div role="main" class="ui-content" data-theme="a">
+        <form>
+          <label><b>Enter Your Word: </b></label>
+          <input type="text" name="message" id="user_input">
+        </form>
+          <input type="submit" value="See a new message displayed!" onclick="displayMessage();"><br/>
+          <label>Your Message: </label>
+          <p><span id='display'></span></p>
+          <p><span id="newMessage"></span></p>
+          <p><span id="invalidEntry"></span></p>
+      </div>
+      <script>
+        var input = document.getElementById("user_input").value;
+
+        function displayMessage() {
+          if (user_input.value.length == 0) {
+              document.getElementById("invalidEntry").innerHTML = checkInput();
+          }
+          else {
+            document.getElementById("newMessage").innerHTML = makeMessage();
+
+          //  document.getElementById("invalidEntry").innerHTML = checkInput();
+            //document.getElementById("invalidEntry").innerHTML = checkInput();
+          }
+        }
+        function makeMessage() {
+          var phrases = ["I love to eat " + document.getElementById("user_input").value + "!",
+                         "My favorite smell is " + document.getElementById("user_input").value + "!",
+                         "I can't stop thinking about " + document.getElementById("user_input").value + "!",
+                         "I love " + document.getElementById("user_input").value + "!"];
+          var rand1 = Math.floor(Math.random() * phrases.length);
+          var newMessage = phrases[rand1];
+          return newMessage;
+        }
+         function checkInput() {
+          var badInput = "Please enter a word.";
+          return badInput;
+        }
+      /*  function displayMessage() {
+          document.getElementById('display').innerHTML =
+          document.getElementById("user_input").value;
+        }
+        */
+      </script>
+    </div>
+  </body>
+  </html>
